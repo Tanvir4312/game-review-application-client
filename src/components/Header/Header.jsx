@@ -1,16 +1,18 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 const Header = () => {
   const { user, userSignOut } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     userSignOut()
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        // console.log(result.user);
+        navigate("/");
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        // console.log(error);
       });
   };
 
@@ -72,6 +74,23 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
+          {user?.photoURL && (
+            <>
+              
+              <div className="tooltip tooltip-bottom " data-tip={user.displayName}>
+                <div className="tooltip-content">
+                  <div className="animate-bounce  text-orange-400 -rotate-10 text-2xl">
+                    {user.displayName}
+                  </div>
+                </div>
+                <img
+                className="w-10 h-10 mr-10 rounded-full cursor-pointer"
+                src={user.photoURL}
+                alt=""
+              /></div>
+             
+            </>
+          )}
           {user ? (
             <button onClick={handleLogout} className="btn">
               Logout

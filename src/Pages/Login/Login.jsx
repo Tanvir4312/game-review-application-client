@@ -1,8 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Header from "../../components/Header/Header";
+import { Link } from "react-router-dom";
 
 const Login = () => {
+    const [error, setError] = useState('')
 
         const {userLogin} = useContext(AuthContext)
 
@@ -15,15 +17,16 @@ const Login = () => {
            
             const password = form.password.value;
     
-            console.log( email,  password);
+     
             userLogin(email, password)
-            .then(result =>{
-                console.log(result.user);
+            .then(() =>{
+                // console.log(result.user);
                 form.reset()
               
             })
-            .catch(error =>{
+            .catch((error) =>{
                 console.log(error);
+                setError(error)
             })
         }
   return (
@@ -88,13 +91,13 @@ const Login = () => {
               name="password"
               required
               placeholder="Password"
-              minLength="8"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-              title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
+              minLength="6"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+              title="Must be more than 6 characters, including number, lowercase letter, uppercase letter"
             />
           </label>
           <p className="validator-hint hidden">
-            Must be more than 8 characters, including
+            Must be more than 6 characters, including
             <br />
             At least one number
             <br />
@@ -106,6 +109,14 @@ const Login = () => {
           <div className="mt-6">
             <button className="btn btn-neutral btn-block">Login</button>
           </div>
+          <div className="mt-3 text-center">
+                <p>Do not have an account? Please <Link to={'/signup'}><span className="ml-1 text-blue-600">Sign Up</span></Link></p>
+            </div>
+            <div>
+                {
+                    error && <p className="text-red-600 text-center mt-3">Invalid your email or password</p>
+                }
+            </div>
         </div>
       </form>
     </div>
