@@ -66,7 +66,7 @@ const Header = () => {
               </div>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl md:text-2xl font-bold">
+          <a className="btn btn-ghost text-xl md:text-2xl font-bold -ml-5 md:-ml-0">
             Chill Gamer
           </a>
         </div>
@@ -84,7 +84,7 @@ const Header = () => {
                   </div>
                 </div>
                 <img
-                className="w-10 h-10 mr-10 rounded-full cursor-pointer"
+                className="w-10 h-10 mr-2 md:mr-10  rounded-full cursor-pointer"
                 src={user.photoURL}
                 alt=""
               /></div>
