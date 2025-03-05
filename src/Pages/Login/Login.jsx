@@ -4,31 +4,39 @@ import Header from "../../components/Header/Header";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-    const [error, setError] = useState('')
+  const [error, setError] = useState("");
 
-        const {userLogin} = useContext(AuthContext)
+  const { userLogin, userLoginWithGoogle } = useContext(AuthContext);
 
-      const handleLogin = e =>{
-            e.preventDefault()
-    
-            const form = e.target;
-      
-            const email = form.email.value;
-           
-            const password = form.password.value;
-    
-     
-            userLogin(email, password)
-            .then(() =>{
-                // console.log(result.user);
-                form.reset()
-              
-            })
-            .catch((error) =>{
-                console.log(error);
-                setError(error)
-            })
-        }
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+
+    const email = form.email.value;
+
+    const password = form.password.value;
+
+    userLogin(email, password)
+      .then(() => {
+        // console.log(result.user);
+        form.reset();
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error);
+      });
+  };
+
+  const handleLoginWithGoogle = () => {
+    userLoginWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div>
       <Header></Header>
@@ -39,8 +47,6 @@ const Login = () => {
 
       <form onSubmit={handleLogin}>
         <div className="max-w-2xl mx-auto bg-slate-300 p-10 rounded-lg">
-          
-
           <label className="input validator w-full mb-5">
             <svg
               className="h-[1em] opacity-50"
@@ -66,8 +72,6 @@ const Login = () => {
             />
           </label>
           <div className="validator-hint hidden">Enter valid email address</div>
-
-         
 
           <label className="input validator w-full">
             <svg
@@ -106,17 +110,32 @@ const Login = () => {
             At least one uppercase letter
           </p>
 
+          <div>
+            <p onClick={handleLoginWithGoogle} className="btn mt-4">
+              Login with Google
+              <img className="w-6" src="https://img.icons8.com/?size=48&id=17949&format=png" alt="" />
+            </p>
+            
+          </div>
+
           <div className="mt-6">
             <button className="btn btn-neutral btn-block">Login</button>
           </div>
           <div className="mt-3 text-center">
-                <p>Do not have an account? Please <Link to={'/signup'}><span className="ml-1 text-blue-600">Sign Up</span></Link></p>
-            </div>
-            <div>
-                {
-                    error && <p className="text-red-600 text-center mt-3">Invalid your email or password</p>
-                }
-            </div>
+            <p>
+              Do not have an account? Please{" "}
+              <Link to={"/signup"}>
+                <span className="ml-1 text-blue-600">Sign Up</span>
+              </Link>
+            </p>
+          </div>
+          <div>
+            {error && (
+              <p className="text-red-600 text-center mt-3">
+                Invalid your email or password
+              </p>
+            )}
+          </div>
         </div>
       </form>
     </div>
