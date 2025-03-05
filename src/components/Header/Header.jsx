@@ -25,7 +25,7 @@ const Header = () => {
         <NavLink to={"/al-review"}>All Reviews</NavLink>
       </li>
       <li>
-        <NavLink to={"/add-review"}>Add Review</NavLink>
+        <NavLink to={"/addReview"}>Add Review</NavLink>
       </li>
       <li>
         <NavLink to={"/my-reviews"}>My Reviews</NavLink>
