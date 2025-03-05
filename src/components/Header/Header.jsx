@@ -66,7 +66,7 @@ const Header = () => {
               </div>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl md:text-2xl font-bold -ml-5 md:-ml-0">
+          <a className="btn btn-ghost text-xl md:text-2xl font-bold -ml-3 md:-ml-0">
             Chill Gamer
           </a>
         </div>
