@@ -5,8 +5,8 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const AddReview = () => {
   const { user } = useContext(AuthContext);
 
-  const handleAddReview = e =>{
-    e.preventDefault()
+  const handleAddReview = (e) => {
+    e.preventDefault();
 
     const form = e.target;
     const name = form.name.value;
@@ -18,8 +18,29 @@ const AddReview = () => {
     const year = form.year.value;
     const genres = form.genres.value;
 
-    console.log(name, email, photo, title, review, rating, year, genres);
-  }
+    const newReview = {
+      name,
+      email,
+      photo,
+      title,
+      review,
+      rating,
+      year,
+      genres,
+    };
+
+    fetch("http://localhost:5000/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newReview),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
   return (
     <div>
       <Header></Header>
@@ -28,12 +49,12 @@ const AddReview = () => {
 
       <div className="md:w-2xl lg:w-4xl mx-auto px-5 py-9 bg-[#D3D3D3] relative -top-9 md:rounded">
         <div>
-            <h1 className="text-center text-2xl font-bold mb-6">Add Review</h1>
+          <h1 className="text-center text-2xl font-bold mb-6">Add Review</h1>
         </div>
         <form onSubmit={handleAddReview}>
           <div className="md:flex gap-5">
             <div className="flex flex-col md:w-2/4">
-              <label for="Name">Name:</label>
+              <label htmlFor="Name">Name:</label>
               <input
                 type="text"
                 name="name"
@@ -43,7 +64,7 @@ const AddReview = () => {
               />
             </div>
             <div className="flex flex-col md:w-2/4">
-              <label for="Name">Email:</label>
+              <label htmlFor="Name">Email:</label>
               <input
                 type="email"
                 name="email"
@@ -55,7 +76,7 @@ const AddReview = () => {
           </div>
           <div className="md:flex gap-5">
             <div className="flex flex-col md:w-2/4">
-              <label for="Name">Image:</label>
+              <label htmlFor="Name">Image:</label>
               <input
                 type="text"
                 name="photo"
@@ -64,7 +85,7 @@ const AddReview = () => {
               />
             </div>
             <div className="flex flex-col md:w-2/4">
-              <label for="Name">Title:</label>
+              <label htmlFor="Name">Title:</label>
               <input
                 type="text"
                 name="title"
@@ -75,7 +96,7 @@ const AddReview = () => {
           </div>
           <div>
             <div className="flex flex-col">
-              <label for="Name">Review:</label>
+              <label htmlFor="Name">Review:</label>
               <textarea
                 placeholder=" A detailed review of the game"
                 name="review"
@@ -85,7 +106,7 @@ const AddReview = () => {
           </div>
           <div className="md:flex gap-5">
             <div className="flex flex-col md:w-2/4">
-              <label for="Name">Rating:</label>
+              <label htmlFor="Name">Rating:</label>
               <input
                 type="text"
                 name="rating"
@@ -94,7 +115,7 @@ const AddReview = () => {
               />
             </div>
             <div className="flex flex-col md:w-2/4">
-              <label for="Name">Publishing year:</label>
+              <label htmlFor="Name">Publishing year:</label>
               <input
                 type="text"
                 name="year"
@@ -108,9 +129,10 @@ const AddReview = () => {
             <fieldset className="fieldset">
               <legend className="fieldset-legend">Genres</legend>
               <select
-              name="genres" 
-              defaultValue="select one" 
-              className="select w-full">
+                name="genres"
+                defaultValue="select one"
+                className="select w-full"
+              >
                 <option disabled={true}>Pick a browser</option>
                 <option>Action</option>
                 <option>RPG</option>
