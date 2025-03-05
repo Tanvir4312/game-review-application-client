@@ -6,6 +6,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import Login from "../Pages/Login/Login";
 import AddReview from "../Pages/AddReview/AddReview";
 import PrivateRoute from "./PrivateRoute";
+import ReviewDetails from "../Pages/ReviewDetails/ReviewDetails";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
   },
+  {
+    path: '/reviewDetails/:id',
+    element: <PrivateRoute><ReviewDetails></ReviewDetails></PrivateRoute>,
+    loader: ({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
+  }
 ]);
 
 export default router;

@@ -1,12 +1,14 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Header from "../../components/Header/Header";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [error, setError] = useState("");
 
   const { userLogin, userLoginWithGoogle } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -21,6 +23,7 @@ const Login = () => {
       .then(() => {
         // console.log(result.user);
         form.reset();
+        navigate(location.state ? location.state : "/");
       })
       .catch((error) => {
         console.log(error);
@@ -30,8 +33,9 @@ const Login = () => {
 
   const handleLoginWithGoogle = () => {
     userLoginWithGoogle()
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        // console.log(result.user);
+        navigate(location.state ? location.state : "/");
       })
       .catch((error) => {
         console.log(error);
@@ -113,9 +117,12 @@ const Login = () => {
           <div>
             <p onClick={handleLoginWithGoogle} className="btn mt-4">
               Login with Google
-              <img className="w-6" src="https://img.icons8.com/?size=48&id=17949&format=png" alt="" />
+              <img
+                className="w-6"
+                src="https://img.icons8.com/?size=48&id=17949&format=png"
+                alt=""
+              />
             </p>
-            
           </div>
 
           <div className="mt-6">

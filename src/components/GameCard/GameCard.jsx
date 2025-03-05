@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 const GameCard = ({ game }) => {
-  console.log(game);
-  const {photo, title, rating} = game
+
+  const {_id, photo, title, rating} = game
   return (
     <div>
       <div className="card bg-[#00D283]/30 shadow-lg pt-6">
@@ -17,7 +19,7 @@ const GameCard = ({ game }) => {
            Rating: <span className="font-semibold">{rating}</span>
           </p>
           <div className="card-actions justify-end">
-            <button className="btn bg-[#00D283]">Explore Details</button>
+            <Link to={`/reviewDetails/${_id}`}><button className="btn bg-[#00D283]">Explore Details</button></Link>
           </div>
         </div>
       </div>
