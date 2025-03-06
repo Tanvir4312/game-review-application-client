@@ -19,7 +19,7 @@ const GameCard = ({ game }) => {
            Rating: <span className="font-semibold">{rating}</span>
           </p>
           <div className="card-actions justify-end">
-            <Link to={`/reviewDetails/${_id}`}><button className="btn bg-[#00D283]">Explore Details</button></Link>
+            <Link to={`/reviewDetails/${_id}`}><button className="btn bg-[#00D283] border-0">Explore Details</button></Link>
           </div>
         </div>
       </div>

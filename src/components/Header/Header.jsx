@@ -22,16 +22,16 @@ const Header = () => {
         <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
-        <NavLink to={"/al-review"}>All Reviews</NavLink>
+        <NavLink to={"/allReview"}>All Reviews</NavLink>
       </li>
       <li>
         <NavLink to={"/addReview"}>Add Review</NavLink>
       </li>
       <li>
-        <NavLink to={"/my-reviews"}>My Reviews</NavLink>
+        <NavLink to={"/myReviews"}>My Reviews</NavLink>
       </li>
       <li>
-        <NavLink to={"/game-watchList"}>Game WatchList</NavLink>
+        <NavLink to={"/gameWatchList"}>Game WatchList</NavLink>
       </li>
     </>
   );
