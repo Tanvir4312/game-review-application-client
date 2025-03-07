@@ -41,7 +41,7 @@ const UpdateReview = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+       
         form.reset();
         toast.success("Update Review Successfully");
         if(data.modifiedCount > 0){

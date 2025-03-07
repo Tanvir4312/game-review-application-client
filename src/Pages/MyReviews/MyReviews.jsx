@@ -2,19 +2,50 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const MyReviews = () => {
-  const myReviews = useLoaderData();
+  const allReviews = useLoaderData();
   const { user } = useContext(AuthContext);
 
   const [reviewsWithEmail, setReviewWithEmail] = useState([]);
 
   useEffect(() => {
-    const reviewEmail = myReviews.filter(
-      (review) => review.email === user.email
-    );
-    setReviewWithEmail(reviewEmail);
-  }, [myReviews, user.email]);
+    const myReview = allReviews.filter((review) => review.email === user.email);
+    setReviewWithEmail(myReview);
+  }, [allReviews, user.email]);
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/reviews/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your Review has been deleted.",
+                icon: "success",
+              });
+              const remaining = reviewsWithEmail.filter(
+                (review) => review._id !== id
+              );
+              setReviewWithEmail(remaining);
+            }
+          });
+      }
+    });
+  };
 
   return (
     <div>
@@ -58,10 +89,18 @@ const MyReviews = () => {
                     <td>{review.genres}</td>
                     <td>{review.rating}</td>
                     <td>
-                     <Link to={`/updateReview/${review._id}`}> <button className="btn">Update</button></Link>
+                      <Link to={`/updateReview/${review._id}`}>
+                        {" "}
+                        <button className="btn">Update</button>
+                      </Link>
                     </td>
                     <td>
-                      <button className="btn bg-red-600">X</button>
+                      <button
+                        onClick={() => handleDelete(review._id)}
+                        className="btn bg-red-600"
+                      >
+                        X
+                      </button>
                     </td>
                   </tr>
                 ))}
