@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const ReviewDetails = () => {
   const gameDetails = useLoaderData();
-  console.log(gameDetails);
+  // console.log(gameDetails);
   const { email, genres, name, photo, rating, review, title, year } =
     gameDetails;
 

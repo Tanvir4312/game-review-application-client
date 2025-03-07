@@ -8,6 +8,9 @@ import AddReview from "../Pages/AddReview/AddReview";
 import PrivateRoute from "./PrivateRoute";
 import ReviewDetails from "../Pages/ReviewDetails/ReviewDetails";
 import AllReview from "../Pages/AllReview/AllReview";
+import MyReviews from "../Pages/MyReviews/MyReviews";
+import UpdateReview from "../Pages/UpdateReview/UpdateReview";
+
 
 const router = createBrowserRouter([
   {
@@ -38,14 +41,32 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/reviewDetails/:id',
-    element: <PrivateRoute><ReviewDetails></ReviewDetails></PrivateRoute>,
-    loader: ({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
+    path: "/reviewDetails/:id",
+    element: (
+      <PrivateRoute>
+        <ReviewDetails></ReviewDetails>
+      </PrivateRoute>
+    ),
+    loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`),
   },
   {
-    path: '/allReview',
+    path: "/allReview",
     element: <AllReview></AllReview>,
-    loader: () => fetch('http://localhost:5000/reviews')
+    loader: () => fetch("http://localhost:5000/reviews"),
+  },
+  {
+    path: "/myReviews",
+    element: (
+      <PrivateRoute>
+        <MyReviews></MyReviews>
+      </PrivateRoute>
+    ),
+    loader: () => fetch("http://localhost:5000/reviews"),
+  },
+  {
+    path: '/updateReview/:id',
+    element: <UpdateReview></UpdateReview>,
+    loader: ({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
   }
 ]);
 

@@ -52,7 +52,7 @@ const AuthProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
-console.log(user);
+// console.log(user);
   const authInfo = {
     user,
     loading,
