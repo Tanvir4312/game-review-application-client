@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Swal from "sweetalert2";
+import Footer from "../../components/Footer/Footer";
 
 const ReviewDetails = () => {
   const gameDetails = useLoaderData();
@@ -80,6 +81,7 @@ const ReviewDetails = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Review from "../Review/Review";
+import Footer from "../../components/Footer/Footer";
 
 
 const AllReview = () => {
@@ -17,6 +18,8 @@ const AllReview = () => {
                     allReview.map(review => <Review key={review._id} review={review}></Review>)
                 }
             </div>
+
+            <Footer></Footer>
            
         </div>
     );

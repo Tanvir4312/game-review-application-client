@@ -2,6 +2,7 @@ import { useContext } from "react";
 import Header from "../../components/Header/Header";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
+import Footer from "../../components/Footer/Footer";
 
 const AddReview = () => {
   const { user } = useContext(AuthContext);
@@ -147,6 +148,8 @@ const AddReview = () => {
           </div>
         </form>
       </div>
+
+      <Footer></Footer>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import Header from "../../components/Header/Header";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 
 const SignUp = () => {
   const { createUser, userUpdate } = useContext(AuthContext);
@@ -179,6 +180,7 @@ const SignUp = () => {
           </div>
         </div>
       </form>
+      <Footer></Footer>
     </div>
   );
 };

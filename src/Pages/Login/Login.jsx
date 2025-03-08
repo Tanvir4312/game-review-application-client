@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Header from "../../components/Header/Header";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -145,6 +146,7 @@ const Login = () => {
           </div>
         </div>
       </form>
+      <Footer></Footer>
     </div>
   );
 };

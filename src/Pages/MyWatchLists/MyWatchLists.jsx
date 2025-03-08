@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Footer from "../../components/Footer/Footer";
 
 const MyWatchLists = () => {
   const watchLists = useLoaderData();
@@ -60,6 +61,7 @@ const MyWatchLists = () => {
           </div>
         )}
       </div>
+      <Footer></Footer>
     </div>
   );
 };

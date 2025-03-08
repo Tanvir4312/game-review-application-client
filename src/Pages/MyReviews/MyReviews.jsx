@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import Footer from "../../components/Footer/Footer";
 
 const MyReviews = () => {
   const allReviews = useLoaderData();
@@ -109,6 +110,8 @@ const MyReviews = () => {
           </div>
         )}
       </div>
+
+      <Footer></Footer>
     </div>
   );
 };

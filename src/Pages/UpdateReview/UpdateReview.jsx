@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import Footer from "../../components/Footer/Footer";
 
 const UpdateReview = () => {
   const reviewWithId = useLoaderData();
@@ -158,6 +159,7 @@ const UpdateReview = () => {
           </div>
         </form>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
