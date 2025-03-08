@@ -31,7 +31,7 @@ const Header = () => {
         <NavLink to={"/myReviews"}>My Reviews</NavLink>
       </li>
       <li>
-        <NavLink to={"/gameWatchList"}>Game WatchList</NavLink>
+        <NavLink to={"/myWatchLists"}>Game WatchList</NavLink>
       </li>
     </>
   );
