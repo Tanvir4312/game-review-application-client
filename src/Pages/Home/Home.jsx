@@ -2,11 +2,11 @@ import Banner from "../../components/Banner/Banner";
 import HighRated from "../../components/HighRated/HighRated";
 import TrendingGame from "../../components/TrendingGame/TrendingGame";
 import UpcomingGames from "../../components/UpcomingGame/UpcomingGames";
-
+import './styles.css'
 
 const Home = () => {
     return (
-        <div>
+        <div className="">
             <Banner></Banner>
             <HighRated></HighRated>
 

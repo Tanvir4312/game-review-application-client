@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+
 const Footer = () => {
+  const { currentTheme } = useContext(AuthContext);
   return (
     <div>
       <div className="h-3 my-7 grid grid-cols-3">
@@ -12,7 +16,11 @@ const Footer = () => {
       </h1>
 
       <div className="w-[280px] md:w-2xl lg:w-4xl mx-auto">
-        <footer className="footer sm:footer-horizontal text-base-content md:px-10">
+        <footer
+          className={`footer sm:footer-horizontal  md:px-10  ${
+            currentTheme === "light" ? "text-base-content" : "text-white"
+          }`}
+        >
           <nav>
             <h6 className="text-2xl font-bold opacity-70">Over View</h6>
             <a className="link link-hover">About</a>
@@ -40,7 +48,11 @@ const Footer = () => {
                 />
               </a>
 
-              <a target="blank" href="https://x.com/">
+              <a
+                className="bg-white rounded-lg"
+                target="blank"
+                href="https://x.com/"
+              >
                 <img
                   src="https://img.icons8.com/?size=50&id=phOKFKYpe00C&format=png"
                   alt=""

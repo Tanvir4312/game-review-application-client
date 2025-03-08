@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 const Header = () => {
-  const { user, userSignOut } = useContext(AuthContext);
+  const { user, userSignOut, changeTheme, currentTheme } =
+    useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -16,6 +17,9 @@ const Header = () => {
       });
   };
 
+  const handleThemeChanged = () => {
+    changeTheme();
+  };
   const links = (
     <>
       <li>
@@ -69,6 +73,17 @@ const Header = () => {
           <a className="btn btn-ghost text-xl md:text-2xl font-bold -ml-3 md:-ml-0">
             Chill Gamer
           </a>
+
+          <button className="btn hidden md:block" onClick={handleThemeChanged}>
+            {currentTheme === "light" ? (
+              <img src="https://img.icons8.com/?size=32&id=VTboxrtZnBOR&format=png" />
+            ) : (
+              <img
+                className="w-8"
+                src="https://img.icons8.com/?size=50&id=648&format=png"
+              />
+            )}
+          </button>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -76,19 +91,21 @@ const Header = () => {
         <div className="navbar-end">
           {user?.photoURL && (
             <>
-              
-              <div className="tooltip tooltip-bottom " data-tip={user.displayName}>
+              <div
+                className="tooltip tooltip-bottom "
+                data-tip={user.displayName}
+              >
                 <div className="tooltip-content">
                   <div className="animate-bounce  text-orange-400 -rotate-10 text-2xl">
                     {user.displayName}
                   </div>
                 </div>
                 <img
-                className="w-10 h-10 mr-2 md:mr-10  rounded-full cursor-pointer"
-                src={user.photoURL}
-                alt=""
-              /></div>
-             
+                  className="w-10 h-10 mr-2 md:mr-10  rounded-full cursor-pointer"
+                  src={user.photoURL}
+                  alt=""
+                />
+              </div>
             </>
           )}
           {user ? (
@@ -101,6 +118,19 @@ const Header = () => {
             </Link>
           )}
         </div>
+      </div>
+
+      <div className="flex justify-center pb-3">
+        <button className="btn md:hidden block" onClick={handleThemeChanged}>
+          {currentTheme === "light" ? (
+            <img src="https://img.icons8.com/?size=32&id=VTboxrtZnBOR&format=png" />
+          ) : (
+            <img
+              className="w-8"
+              src="https://img.icons8.com/?size=50&id=648&format=png"
+            />
+          )}
+        </button>
       </div>
     </div>
   );

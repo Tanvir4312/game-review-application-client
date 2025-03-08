@@ -17,6 +17,17 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider()
+  const [currentTheme, setCurrentTheme] = useState('light')
+
+  const changeTheme = () =>{
+    if(currentTheme === 'light'){
+      setCurrentTheme('dark')
+    }
+    else{
+      setCurrentTheme('light')
+    }
+  }
+
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -60,7 +71,9 @@ const AuthProvider = ({ children }) => {
     userUpdate,
     userLogin,
     userSignOut,
-    userLoginWithGoogle
+    userLoginWithGoogle,
+    changeTheme,
+    currentTheme
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
