@@ -1,0 +1,45 @@
+[
+    {
+      "title": "Elden Ring: Shadow of the Erdtree",
+      "photo": "https://i.ibb.co.com/yct4Xxt6/capsule-616x353.jpg",
+      "rating": 9.8,
+      "short_review": "A breathtaking expansion with deep lore and brutal combat."
+    },
+    {
+      "title": "Final Fantasy VII Rebirth",
+      "photo": "https://i.ibb.co.com/79k9fFr/da43e71791bcf4e8cd5ca28e62a5c96a9fc77ee6af15b8f61-scaled.jpg",
+      "rating": 9.5,
+      "short_review": "A stunning reimagining packed with nostalgia and new twists."
+    },
+    {
+      "title": "Hades II",
+      "photo": "https://i.ibb.co.com/p6XPKx4c/hades-ii-3q240-1.png",
+      "rating": 9.7,
+      "short_review": "An addictive roguelike with refined mechanics and rich storytelling."
+    },
+    {
+      "title": "Tekken 8",
+      "photo": "https://i.ibb.co.com/gL8dhbVC/capsule-616x353-1.jpg",
+      "rating": 9.2,
+      "short_review": "Fluid combat, cinematic visuals, and an evolving fighter roster."
+    },
+    {
+      "title": "Star Wars Outlaws",
+      "photo": "https://i.ibb.co.com/7xbWb9jb/outlaws-key-art-main-02-e3c5cd6c.jpg",
+      "rating": 9.0,
+      "short_review": "An open-world adventure filled with iconic Star Wars moments."
+    },
+    {
+        "title": "Dragon's Dogma 2",
+        "photo": "https://i.ibb.co.com/0pF77rM7/thumb-survey.jpg",
+        "rating": 8.9,
+        "short_review": "A deep RPG with thrilling battles and massive exploration."
+      },
+      {
+        "title": "Suicide Squad: Kill the Justice League",
+        "photo": "https://i.ibb.co.com/Z1TTJg48/SSKTJL-Traversal-768-480.png",
+        "rating": 8.7,
+        "short_review": "Chaotic action, humor, and intense squad-based combat."
+      }
+  ]
+  
