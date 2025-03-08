@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 const Header = () => {
   const { user, userSignOut, changeTheme, currentTheme } =
     useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogout = () => {
     userSignOut()
@@ -74,16 +75,21 @@ const Header = () => {
             Chill Gamer
           </a>
 
-          <button className="btn hidden md:block" onClick={handleThemeChanged}>
-            {currentTheme === "light" ? (
-              <img src="https://img.icons8.com/?size=32&id=VTboxrtZnBOR&format=png" />
-            ) : (
-              <img
-                className="w-8"
-                src="https://img.icons8.com/?size=50&id=648&format=png"
-              />
-            )}
-          </button>
+          {location.pathname === "/" && (
+            <button
+              className="btn hidden md:block"
+              onClick={handleThemeChanged}
+            >
+              {currentTheme === "light" ? (
+                <img src="https://img.icons8.com/?size=32&id=VTboxrtZnBOR&format=png" />
+              ) : (
+                <img
+                  className="w-8"
+                  src="https://img.icons8.com/?size=50&id=648&format=png"
+                />
+              )}
+            </button>
+          )}
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -121,16 +127,18 @@ const Header = () => {
       </div>
 
       <div className="flex justify-center pb-3">
-        <button className="btn md:hidden block" onClick={handleThemeChanged}>
-          {currentTheme === "light" ? (
-            <img src="https://img.icons8.com/?size=32&id=VTboxrtZnBOR&format=png" />
-          ) : (
-            <img
-              className="w-8"
-              src="https://img.icons8.com/?size=50&id=648&format=png"
-            />
-          )}
-        </button>
+        {location.pathname === "/" && (
+          <button className="btn md:hidden block" onClick={handleThemeChanged}>
+            {currentTheme === "light" ? (
+              <img src="https://img.icons8.com/?size=32&id=VTboxrtZnBOR&format=png" />
+            ) : (
+              <img
+                className="w-8"
+                src="https://img.icons8.com/?size=50&id=648&format=png"
+              />
+            )}
+          </button>
+        )}
       </div>
     </div>
   );

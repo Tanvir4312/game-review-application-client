@@ -1,28 +1,46 @@
-
-
 import freefire from "../../assets/freefire.jpg";
 import pubg from "../../assets/pubg.jpg";
 import Asphalt9 from "../../assets/Asphalt 9.webp";
 import killingFloor from "../../assets/killing-floor.webp";
+import { Typewriter } from "react-simple-typewriter";
 
 const Banner = () => {
   return (
     <div>
-      <div className="bg-[#00D283] h-20"></div>
+      <div className="bg-[#00D283] h-24">
+        <div className="w-[255px] md:w-2xl lg:w-4xl mx-auto pt-3">
+          <h1 className="md:text-3xl font-bold">
+          Your Gaming Journey Starts Here{" "}
+            <span className="text-[#ed6b00]">
+            
+              <Typewriter
+                words={['Explore', 'Unlock', 'Build', 'Enjoy!']}
+                loop={Infinity}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </span>
+          </h1>
+        </div>
+      </div>
 
-      <div className="flex justify-center items-center w-[280px] md:w-2xl lg:w-4xl mx-auto relative -top-7">
+      <div className="flex justify-center items-center w-[280px] md:w-2xl lg:w-4xl mx-auto relative -top-6">
         <div className="carousel rounded-box">
           {/* Slide 1 */}
           <div id="slide1" className="carousel-item relative w-full">
-            <img
-              src={freefire}
-              className="w-full"
-              alt="Slide 1"
-            />
+            <img src={freefire} className="w-full" alt="Slide 1" />
             {/* Text Overlay */}
             <div className="absolute inset-0 flex flex-col items-center justify-end bg-black/50 text-white pb-11">
-              <h2 className="text-sm md:text-3xl font-bold">Free Fire: Battle Royale</h2>
-              <p className="text-sm text-center px-2 md:py-4">Fast-paced battle royale game where players fight for survival, <br /> strategize, and become the last one standing.</p>
+              <h2 className="text-sm md:text-3xl font-bold">
+                Free Fire: Battle Royale
+              </h2>
+              <p className="text-sm text-center px-2 md:py-4">
+                Fast-paced battle royale game where players fight for survival,{" "}
+                <br /> strategize, and become the last one standing.
+              </p>
             </div>
             {/* Navigation Buttons */}
             <div className="absolute flex gap-3 mt-1 justify-center md:items-center md:justify-between  transform -translate-y-1/2 left-5 right-5 top-2/2 -bottom-24 md:top-1/2">
@@ -36,15 +54,14 @@ const Banner = () => {
           </div>
           {/* Slide 2 */}
           <div id="slide2" className="carousel-item relative w-full">
-            <img
-              src={killingFloor}
-              className="w-full"
-              alt="Slide 2"
-            />
+            <img src={killingFloor} className="w-full" alt="Slide 2" />
             {/* Text Overlay */}
             <div className="absolute inset-0 flex flex-col items-center justify-end bg-black/50 text-white pb-11">
               <h2 className="text-sm md:text-3xl font-bold">Killing Floor 3</h2>
-              <p className="text-sm text-center px-2 md:py-4">Intense first-person shooter where players battle hordes of deadly <br /> creatures in cooperative survival gameplay.</p>
+              <p className="text-sm text-center px-2 md:py-4">
+                Intense first-person shooter where players battle hordes of
+                deadly <br /> creatures in cooperative survival gameplay.
+              </p>
             </div>
             {/* Navigation Buttons */}
             <div className="absolute flex gap-3 mt-1 justify-center md:items-center md:justify-between  transform -translate-y-1/2 left-5 right-5 top-2/2 -bottom-24 md:top-1/2">
@@ -58,15 +75,17 @@ const Banner = () => {
           </div>
           {/* Slide 3 */}
           <div id="slide3" className="carousel-item relative w-full">
-            <img
-              src={pubg}
-              className="w-full"
-              alt="Slide 3"
-            />
+            <img src={pubg} className="w-full" alt="Slide 3" />
             {/* Text Overlay */}
             <div className="absolute inset-0 flex flex-col items-center justify-end bg-black/50 text-white pb-11">
-              <h2 className="text-sm md:text-3xl font-bold"> PUBG: Battlegrounds</h2>
-              <p className="text-sm text-center px-2 md:py-4">Thrilling battle royale game where players fight for survival on <br /> vast maps with realistic weapons and tactics.</p>
+              <h2 className="text-sm md:text-3xl font-bold">
+                {" "}
+                PUBG: Battlegrounds
+              </h2>
+              <p className="text-sm text-center px-2 md:py-4">
+                Thrilling battle royale game where players fight for survival on{" "}
+                <br /> vast maps with realistic weapons and tactics.
+              </p>
             </div>
             {/* Navigation Buttons */}
             <div className="absolute flex gap-3 mt-1 justify-center md:items-center md:justify-between  transform -translate-y-1/2 left-5 right-5 top-2/2 -bottom-24 md:top-1/2">
@@ -80,15 +99,17 @@ const Banner = () => {
           </div>
           {/* Slide 4 */}
           <div id="slide4" className="carousel-item relative w-full">
-            <img
-              src={Asphalt9}
-              className="w-full"
-              alt="Slide 4"
-            />
+            <img src={Asphalt9} className="w-full" alt="Slide 4" />
             {/* Text Overlay */}
             <div className="absolute inset-0 flex flex-col items-center justify-end bg-black/50 text-white pb-11">
-              <h2 className="text-sm md:text-3xl font-bold">Asphalt 9: Legends</h2>
-              <p className="text-sm text-center px-2 md:py-4">High-speed arcade racing game featuring stunning graphics, <br /> customizable cars, and adrenaline-pumping multiplayer action.</p>
+              <h2 className="text-sm md:text-3xl font-bold">
+                Asphalt 9: Legends
+              </h2>
+              <p className="text-sm text-center px-2 md:py-4">
+                High-speed arcade racing game featuring stunning graphics,{" "}
+                <br /> customizable cars, and adrenaline-pumping multiplayer
+                action.
+              </p>
             </div>
             {/* Navigation Buttons */}
             <div className="absolute flex gap-3 mt-1 justify-center md:items-center md:justify-between  transform -translate-y-1/2 left-5 right-5 top-2/2 -bottom-24 md:top-1/2">
@@ -100,8 +121,6 @@ const Banner = () => {
               </a>
             </div>
           </div>
-
-         
         </div>
       </div>
     </div>
