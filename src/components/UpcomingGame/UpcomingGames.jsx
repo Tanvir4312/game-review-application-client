@@ -1,11 +1,43 @@
+import { useEffect } from "react";
+import { useState } from "react";
+import 'animate.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 const UpcomingGames = () => {
+  const [upcomingGames, setUpcomingGames] = useState([]);
+
+
+  useEffect(() => {
+    fetch("/upcoming.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setUpcomingGames(data);
+      });
+  }, []);
+  
+
   return (
     <div>
-        <h1 className="text-3xl font-bold text-center my-10">Upcoming Games</h1>
-      Upcoming Games Section: Showcase games that are set to release soon.
-      Include release dates, trailers, and a brief summary of the game. You
-      could also add a countdown timer for each game's release to increase
-      excitement.
+      <h1 className="text-3xl font-bold text-center my-10">Upcoming Games</h1>
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
+        {upcomingGames.map((game, idx) => (
+          <div key={idx} className="card card-dash bg-green-100">
+            <div data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000" className="card-body ">
+              <h2 className="card-title">{game.title}</h2>
+              <h4 className="font-semibold">Release Date: {game.release_date}</h4>
+              <p>
+                {game.short_review}
+              </p>
+              <div className="">
+                <button className="btn btn-block btn-neutral mt-4">See Details</button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
