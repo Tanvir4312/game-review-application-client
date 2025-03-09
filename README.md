@@ -1,12 +1,16 @@
-# React + Vite
+# Chill Gamer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site:** [Chill Gamer](https://game-review-application-c0136.web.app/)
 
-Currently, two official plugins are available:
+## About Chill Gamer
+Chill Gamer is a modern game review platform where users can explore, review, and track their favorite games with ease. It provides a seamless and interactive experience for gamers looking to share and discover reviews.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+- 🔥 **User Authentication:** Secure login and registration system using Firebase.
+- 🎮 **Game Reviews Management:** Users can add, edit, and delete their game reviews.
+- 🌟 **Sorting & Filtering:** Sort reviews by rating and year, filter by genre for easy browsing.
+- 🎭 **Dark/Light Theme Toggle:** Enjoy a customized browsing experience.
+- 🚀 **Trending & Upcoming Games:** Stay updated with the latest gaming trends.
+- 🎬 **Animated UI & Interactions:** Integrated with Lottie React, React Awesome Reveal, and React-tooltip for smooth visuals.
+- ⚡ **Responsive Design:** Fully optimized for mobile, tablet, and desktop.
+- ❌ **404 Page & Loading Spinner:** Enhanced user experience with proper error handling and loading animations.
