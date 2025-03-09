@@ -3,6 +3,10 @@ import Header from "../../components/Header/Header";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Footer from "../../components/Footer/Footer";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+
+AOS.init();
 
 const MyWatchLists = () => {
   const watchLists = useLoaderData();
@@ -36,7 +40,7 @@ const MyWatchLists = () => {
           </p>
         ) : (
           <div className="overflow-x-auto">
-            <table className="table table-zebra">
+            <table data-aos="fade-up" data-aos-duration="1000" className="table table-zebra">
               {/* head */}
               <thead>
                 <tr>
@@ -49,7 +53,7 @@ const MyWatchLists = () => {
 
               <tbody>
                 {myWatchLists.map((review, idx) => (
-                  <tr key={review._id}>
+                  <tr data-aos="fade-right" data-aos-easing="ease-in-out" key={review._id}>
                     <th>{idx + 1}</th>
                     <td>{review.title}</td>
                     <td>{review.genres}</td>

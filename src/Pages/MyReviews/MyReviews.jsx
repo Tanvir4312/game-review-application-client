@@ -4,6 +4,10 @@ import Header from "../../components/Header/Header";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import Footer from "../../components/Footer/Footer";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+
+AOS.init();
 
 const MyReviews = () => {
   const allReviews = useLoaderData();
@@ -69,7 +73,7 @@ const MyReviews = () => {
           </p>
         ) : (
           <div className="overflow-x-auto">
-            <table className="table table-zebra">
+            <table data-aos="fade-up" data-aos-duration="1000" className="table table-zebra">
               {/* head */}
               <thead>
                 <tr>
@@ -84,7 +88,7 @@ const MyReviews = () => {
 
               <tbody>
                 {reviewsWithEmail.map((review, idx) => (
-                  <tr key={review._id}>
+                  <tr data-aos="fade-up" key={review._id}>
                     <th>{idx + 1}</th>
                     <td>{review.title}</td>
                     <td>{review.genres}</td>

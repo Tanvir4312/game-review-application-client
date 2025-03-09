@@ -3,7 +3,7 @@ import Header from "../../components/Header/Header";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import Footer from "../../components/Footer/Footer";
-
+import 'animate.css';
 const AddReview = () => {
   const { user } = useContext(AuthContext);
 
@@ -48,7 +48,7 @@ const AddReview = () => {
     <div>
       <Header></Header>
 
-      <div className="bg-[#00D283] h-20"></div>
+      <div className="bg-[#00D283] h-20 animate__animated animate__bounceInDown animate__slow"></div>
 
       <div className="md:w-2xl lg:w-5xl mx-auto px-5 py-9 bg-[#D3D3D3] relative -top-9 md:rounded">
         <div>
