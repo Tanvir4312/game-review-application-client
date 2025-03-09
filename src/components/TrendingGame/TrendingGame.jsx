@@ -1,12 +1,14 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const TrendingGame = () => {
   const [trendingGames, setTrendingGames] = useState([]);
+  const {currentTheme} = useContext(AuthContext)
 
   useEffect(() => {
     fetch("/trending.json")
@@ -51,7 +53,7 @@ const TrendingGame = () => {
                 <figure className="w-full h-2/3">
                   <img src={game.photo} alt={game.title} className="h-full w-full object-cover rounded-t-xl" />
                 </figure>
-                <div className="p-2 text-center h-1/3">
+                <div className={`p-2 text-center h-1/3 ${currentTheme === 'dark' && 'text-black'}`}>
                   <h3 className="text-sm font-semibold">{game.title}</h3>
                   <h3 className="text-sm font-semibold">{game.rating}</h3>
                   <h3 className="text-sm">{game.short_review}</h3>
