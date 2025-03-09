@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Review = ({ review }) => {
-  const {_id, photo, title, rating, year} = review;
+  const {_id, photo, title, rating, year, genres} = review;
 
   return (
     <div>
@@ -17,7 +17,8 @@ const Review = ({ review }) => {
           <p className="font-bold">
            Rating: {rating}
           </p>
-          <p className="-mt-24">Published: {year}</p>
+          <p className="-mt-20">Published: {year}</p>
+          <p className="-mt-20">Genres: {genres}</p>
           <div className="card-actions justify-end">
           <Link to={`/reviewDetails/${_id}`}><button className="btn bg-[#00D283] border-0">Explore Details</button></Link>
           </div>
