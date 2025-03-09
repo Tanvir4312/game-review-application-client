@@ -11,11 +11,11 @@ const Footer = () => {
         <div className="bg-[#FF6874]"></div>
       </div>
 
-      <h1 className="text-3xl font-bold text-center mb-5">
+      <h1 className="text-3xl font-bold text-center mb-10">
         Chill <span className="text-[#00CE7A]">Gamer</span>
       </h1>
 
-      <div className="w-[280px] md:w-2xl lg:w-4xl mx-auto">
+      <div className="w-[280px] md:w-2xl lg:w-5xl mx-auto">
         <footer
           className={`footer sm:footer-horizontal  md:px-10  ${
             currentTheme === "light" ? "text-base-content" : "text-white"

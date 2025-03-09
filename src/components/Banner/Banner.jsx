@@ -9,7 +9,7 @@ const Banner = () => {
   return (
     <div>
       <div className="bg-[#00D283] h-24">
-        <div className="w-[255px] md:w-2xl lg:w-4xl mx-auto pt-3">
+        <div className="w-[255px] md:w-2xl lg:w-6xl mx-auto pt-3">
           <h1 className="md:text-3xl font-bold">
             Your Gaming Journey Starts Here{" "}
             <span className="text-[#ed6b00]">
@@ -27,7 +27,7 @@ const Banner = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center w-[280px] md:w-2xl lg:w-4xl mx-auto relative -top-7">
+      <div className="flex justify-center items-center w-[280px] md:w-2xl lg:w-6xl mx-auto relative -top-7">
         <div className="carousel rounded-box">
           {/* Slide 1 */}
           <div id="slide1" className="carousel-item relative w-full">
@@ -77,7 +77,7 @@ const Banner = () => {
               </Fade>
             </div>
             {/* Navigation Buttons */}
-            <div className="absolute flex gap-3 mt-1 justify-center md:items-center md:justify-between  transform -translate-y-1/2 left-5 right-5 top-2/2 -bottom-24 md:top-1/2">
+            <div className="absolute flex gap-3 mt-1 justify-center md:items-center md:justify-between transform -translate-y-1/2 left-5 right-5 top-2/2 -bottom-24 md:top-1/2">
               <a href="#slide1" className="btn btn-circle">
                 ❮
               </a>
@@ -136,7 +136,7 @@ const Banner = () => {
               </Fade>
             </div>
             {/* Navigation Buttons */}
-            <div className="absolute flex gap-3 mt-1 justify-center md:items-center md:justify-between  transform -translate-y-1/2 left-5 right-5 top-2/2 -bottom-24 md:top-1/2">
+            <div className="absolute flex gap-3 mt-1 justify-center md:items-center md:justify-between transform -translate-y-1/2 left-5 right-5 top-2/2 -bottom-24 md:top-1/2">
               <a href="#slide3" className="btn btn-circle">
                 ❮
               </a>

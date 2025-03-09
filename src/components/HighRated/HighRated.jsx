@@ -13,7 +13,7 @@ const HighRated = () => {
   }, []);
 
   return (
-    <div className="w-[280px] md:w-2xl lg:w-4xl mx-auto my-16">
+    <div className="w-[280px] md:w-2xl lg:w-6xl mx-auto my-16">
       <h2 className="text-center text-4xl font-bold">
         <span className="text-[#00D283]">Top</span> Picks for Gamers
       </h2>

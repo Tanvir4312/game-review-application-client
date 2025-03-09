@@ -45,7 +45,7 @@ const ReviewDetails = () => {
   return (
     <div>
       <Header></Header>
-      <div className="md:w-2xl lg:w-4xl mx-auto my-10 px-3 md:px-0">
+      <div className="md:w-2xl lg:w-5xl mx-auto my-10 px-3 md:px-0">
         <div className="card md:card-side bg-[#D3D3D3] shadow-sm p-2">
           <figure className="lg:w-1/3">
             <img className="w-full" src={photo} alt={photo} />

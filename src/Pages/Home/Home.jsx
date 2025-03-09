@@ -10,7 +10,7 @@ const Home = () => {
             <Banner></Banner>
             <HighRated></HighRated>
 
-            <div className="w-[280px] md:w-2xl lg:w-4xl mx-auto">
+            <div className="w-[280px] md:w-2xl lg:w-6xl mx-auto">
                 <TrendingGame></TrendingGame>
                 <UpcomingGames></UpcomingGames>
             </div>

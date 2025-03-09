@@ -57,7 +57,7 @@ const AllReview = () => {
     <div>
       <Header></Header>
 
-      <div className="w-[280px] md:w-2xl lg:w-4xl mx-auto">
+      <div className="w-[280px] md:w-2xl lg:w-5xl mx-auto">
         <h1 className="text-center text-4xl font-bold mt-7">
           All <span className="text-[#00D283]">Review</span>
         </h1>

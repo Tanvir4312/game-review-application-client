@@ -50,7 +50,7 @@ const AddReview = () => {
 
       <div className="bg-[#00D283] h-20"></div>
 
-      <div className="md:w-2xl lg:w-4xl mx-auto px-5 py-9 bg-[#D3D3D3] relative -top-9 md:rounded">
+      <div className="md:w-2xl lg:w-5xl mx-auto px-5 py-9 bg-[#D3D3D3] relative -top-9 md:rounded">
         <div>
           <h1 className="text-center text-2xl font-bold mb-6">Add Review</h1>
         </div>

@@ -52,7 +52,7 @@ const MyReviews = () => {
     <div>
       <Header></Header>
 
-      <div className="w-[280px] md:w-2xl lg:w-4xl mx-auto my-10">
+      <div className="w-[280px] md:w-2xl lg:w-5xl mx-auto my-10">
         <h1 className="text-center text-4xl font-bold my-7">
           My{" "}
           <span className="text-[#00D283]">
