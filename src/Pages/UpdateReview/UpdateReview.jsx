@@ -33,7 +33,7 @@ const UpdateReview = () => {
       genres,
     };
 
-    fetch(`http://localhost:5000/reviews/${_id}`, {
+    fetch(`https://game-review-application-server-frgn5ltba.vercel.app/reviews/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

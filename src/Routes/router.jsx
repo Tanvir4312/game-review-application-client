@@ -48,12 +48,12 @@ const router = createBrowserRouter([
         <ReviewDetails></ReviewDetails>
       </PrivateRoute>
     ),
-    loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`),
+    loader: ({ params }) => fetch(`https://game-review-application-server-frgn5ltba.vercel.app/reviews/${params.id}`),
   },
   {
     path: "/allReview",
     element: <AllReview></AllReview>,
-    loader: () => fetch("http://localhost:5000/reviews"),
+    loader: () => fetch("https://game-review-application-server-frgn5ltba.vercel.app/reviews"),
   },
   {
     path: "/myReviews",
@@ -62,17 +62,17 @@ const router = createBrowserRouter([
         <MyReviews></MyReviews>
       </PrivateRoute>
     ),
-    loader: () => fetch("http://localhost:5000/reviews"),
+    loader: () => fetch("https://game-review-application-server-frgn5ltba.vercel.app/reviews"),
   },
   {
     path: '/updateReview/:id',
     element: <UpdateReview></UpdateReview>,
-    loader: ({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
+    loader: ({params}) => fetch(`https://game-review-application-server-frgn5ltba.vercel.app/reviews/${params.id}`)
   },
   {
     path: '/myWatchLists',
     element: <PrivateRoute><MyWatchLists></MyWatchLists></PrivateRoute>,
-    loader: () => fetch('http://localhost:5000/watchLists')
+    loader: () => fetch('https://game-review-application-server-frgn5ltba.vercel.app/watchLists')
   }
 ]);
 

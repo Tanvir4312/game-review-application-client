@@ -40,8 +40,9 @@ const Banner = () => {
                 </h2>
               </Slide>
 
-              <Fade delay={450} cascade damping={1e-1}>
+              <Fade delay={550} cascade damping={1e-2}>
                 <p className="text-sm text-center px-2 md:py-4">
+                  
                   Fast-paced battle royale game where players fight for
                   survival, <br /> strategize, and become the last one standing.
                 </p>

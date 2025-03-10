@@ -1,9 +1,9 @@
 import { useContext, useEffect } from "react";
 import { useState } from "react";
 import "animate.css";
+import { AuthContext } from "../../Provider/AuthProvider";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { AuthContext } from "../../Provider/AuthProvider";
 AOS.init();
 const UpcomingGames = () => {
   const [upcomingGames, setUpcomingGames] = useState([]);
@@ -25,7 +25,7 @@ const UpcomingGames = () => {
           <div key={idx} className="card card-dash bg-green-100">
             <div
               data-aos="flip-left"
-              data-aos-easing="ease-out"
+              data-aos-easing="ease-out-in"
               data-aos-duration="1000"
               className={`card-body ${currentTheme === 'dark' && 'text-black'}`}
             >
