@@ -5,7 +5,7 @@ const HighRated = () => {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    fetch("https://game-review-application-server-frgn5ltba.vercel.app/reviews")
+    fetch("https://game-review-application-server-smoky.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) =>
         setGames(data.sort((a, b) => b.rating - a.rating).slice(0, 6))

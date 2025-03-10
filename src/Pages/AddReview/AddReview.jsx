@@ -31,7 +31,7 @@ const AddReview = () => {
       genres,
     };
 
-    fetch("https://game-review-application-server-frgn5ltba.vercel.app/reviews", {
+    fetch("https://game-review-application-server-smoky.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

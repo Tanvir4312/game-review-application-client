@@ -24,7 +24,7 @@ const ReviewDetails = () => {
       year,
     };
 
-    fetch("https://game-review-application-server-frgn5ltba.vercel.app/watchLists", {
+    fetch("https://game-review-application-server-smoky.vercel.app/watchLists", {
       method: "POST",
       headers: {
         "content-type": "application/json",
